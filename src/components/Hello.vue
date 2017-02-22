@@ -38,12 +38,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="value in items">
+      <tr v-for="value in filterItems">
         <td>{{value.x}}</td>
         <td>{{value.y}}</td>
       </tr>
     </tbody>
   </table>
+  <button class="btn btn-info" @click="loadMore">加载</button>
 </div>
 </template>
 
@@ -54,7 +55,13 @@ export default {
   data() {
     return {
       msg: 'Welcome to Your Vue.js App',
-      items: {}
+      items: [],
+      limit: 10
+    }
+  },
+  computed:{
+    filterItems:function(){
+      return this.items.slice(0,this.limit);
     }
   },
   methods: {
@@ -66,6 +73,10 @@ export default {
       }, (response) => {
         console.log(response);
       });
+    },
+    loadMore:function(){
+      alert(111);
+      this.limit = this.items.length;
     }
   },
   mounted() {
