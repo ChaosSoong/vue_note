@@ -9,9 +9,13 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter);
 import Hello from './components/Hello'
 import Hello0 from './components/Hello0'
+import Front from './components/Front'
+import End from './components/End'
 const routes = [
   { path: '/Hello', component: Hello },
-  { path: '/Hello0', component: Hello0 }
+  { path: '/Hello0', component: Hello0 },
+  { path: '/Front', component: Front },
+  { path: '/End', component: End }
 ]
 const router = new VueRouter({
   routes
