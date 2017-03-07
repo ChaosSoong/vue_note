@@ -1,7 +1,7 @@
 <template>
 <div>
   <h1>{{msg}}</h1>
-  <ul v-for='item in items'>
+  <ul v-for='item in filterItems'>
     <li class="entry-item">
       <div class='image'>
         <img :src="item.img" alt="item.img">
@@ -27,6 +27,7 @@
       </div>
     </li>
   </ul>
+  <button type="button" class="btn btn-info" @click="loadMore">加载更多</button>
 </div>
 </template>
 
@@ -46,14 +47,177 @@ export default {
           img: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2401881700,2342273471&fm=58',
           likes: '11',
           comments: 11
+        },
+        {
+          title: 'promises 很酷，但很多人并没有理解就在用了',
+          img: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2401881700,2342273471&fm=58',
+          likes: '11',
+          comments: 11
+        },
+        {
+          title: 'promises 很酷，但很多人并没有理解就在用了',
+          img: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2401881700,2342273471&fm=58',
+          likes: '11',
+          comments: 11
+        },
+        {
+          title: 'promises 很酷，但很多人并没有理解就在用了',
+          img: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2401881700,2342273471&fm=58',
+          likes: '11',
+          comments: 11
+        },
+        {
+          title: 'promises 很酷，但很多人并没有理解就在用了',
+          img: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2401881700,2342273471&fm=58',
+          likes: '11',
+          comments: 11
+        },
+        {
+          title: 'promises 很酷，但很多人并没有理解就在用了',
+          img: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2401881700,2342273471&fm=58',
+          likes: '11',
+          comments: 11
+        },
+        {
+          title: 'promises 很酷，但很多人并没有理解就在用了',
+          img: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2401881700,2342273471&fm=58',
+          likes: '11',
+          comments: 11
+        },
+        {
+          title: 'promises 很酷，但很多人并没有理解就在用了',
+          img: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2401881700,2342273471&fm=58',
+          likes: '11',
+          comments: 11
+        },
+        {
+          title: 'promises 很酷，但很多人并没有理解就在用了',
+          img: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2401881700,2342273471&fm=58',
+          likes: '11',
+          comments: 11
+        },
+        {
+          title: 'promises 很酷，但很多人并没有理解就在用了',
+          img: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2401881700,2342273471&fm=58',
+          likes: '11',
+          comments: 11
+        },
+        {
+          title: 'promises 很酷，但很多人并没有理解就在用了',
+          img: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2401881700,2342273471&fm=58',
+          likes: '11',
+          comments: 11
+        },
+        {
+          title: 'promises 很酷，但很多人并没有理解就在用了',
+          img: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2401881700,2342273471&fm=58',
+          likes: '11',
+          comments: 11
+        },
+        {
+          title: 'promises 很酷，但很多人并没有理解就在用了',
+          img: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2401881700,2342273471&fm=58',
+          likes: '11',
+          comments: 11
+        },
+        {
+          title: 'promises 很酷，但很多人并没有理解就在用了',
+          img: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2401881700,2342273471&fm=58',
+          likes: '11',
+          comments: 11
+        },
+        {
+          title: 'promises 很酷，但很多人并没有理解就在用了',
+          img: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2401881700,2342273471&fm=58',
+          likes: '11',
+          comments: 11
+        },
+        {
+          title: 'promises 很酷，但很多人并没有理解就在用了',
+          img: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2401881700,2342273471&fm=58',
+          likes: '11',
+          comments: 11
+        },
+        {
+          title: 'promises 很酷，但很多人并没有理解就在用了',
+          img: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2401881700,2342273471&fm=58',
+          likes: '11',
+          comments: 11
+        },
+        {
+          title: 'promises 很酷，但很多人并没有理解就在用了',
+          img: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2401881700,2342273471&fm=58',
+          likes: '11',
+          comments: 11
+        },
+        {
+          title: 'promises 很酷，但很多人并没有理解就在用了',
+          img: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2401881700,2342273471&fm=58',
+          likes: '11',
+          comments: 11
+        },
+        {
+          title: 'promises 很酷，但很多人并没有理解就在用了',
+          img: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2401881700,2342273471&fm=58',
+          likes: '11',
+          comments: 11
+        },
+        {
+          title: 'promises 很酷，但很多人并没有理解就在用了',
+          img: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2401881700,2342273471&fm=58',
+          likes: '11',
+          comments: 11
+        },
+        {
+          title: 'promises 很酷，但很多人并没有理解就在用了',
+          img: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2401881700,2342273471&fm=58',
+          likes: '11',
+          comments: 11
+        },
+        {
+          title: 'promises 很酷，但很多人并没有理解就在用了',
+          img: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2401881700,2342273471&fm=58',
+          likes: '11',
+          comments: 11
+        },
+        {
+          title: 'promises 很酷，但很多人并没有理解就在用了',
+          img: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2401881700,2342273471&fm=58',
+          likes: '11',
+          comments: 11
+        },
+        {
+          title: 'promises 很酷，但很多人并没有理解就在用了',
+          img: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2401881700,2342273471&fm=58',
+          likes: '11',
+          comments: 11
+        },
+        {
+          title: 'promises 很酷，但很多人并没有理解就在用了',
+          img: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2401881700,2342273471&fm=58',
+          likes: '11',
+          comments: 11
         }
       ],
-      msg: 'front'
+      msg: 'front',
+      limit: 10,
+      i:1
     }
   },
 
   mounted() {
 
+  },
+  computed:{
+    filterItems:function(){
+      return this.items.slice(0,this.limit);
+    }
+  },
+  methods:{
+    loadMore: function(){
+      this.limit =this.limit*this.i;
+      this.i++;
+    }
   }
 }
 </script>
