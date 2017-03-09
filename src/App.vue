@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <nav class="navbar navbar-default" role="navigation">
-	<div class="container-fluid">
+    <nav class="navbar navbar-default" role="navigation" id="mynavbar">
+	<div class="container-fluid" >
 	<div>
 		<ul class="nav navbar-nav">
 			<li class="active"><router-link to="/Front">前端</router-link></li>
@@ -44,6 +44,9 @@ export default {
 </script>
 
 <style>
+#mynavbar{
+  position: fixed;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

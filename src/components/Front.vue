@@ -27,13 +27,19 @@
       </div>
     </li>
   </ul>
-  <button type="button" class="btn btn-info" @click="loadMore">加载更多</button>
+  <button type="button" class="btn btn-info" @click="loadMore" v-show="items.length>limit">加载更多</button>
 </div>
 </template>
 
 <script>
 export default {
   name: 'front',
+  props: {
+    msg:{
+      type: String,
+      default: '我是来自front的'
+    }
+  },
   data() {
     return {
       items: [{
@@ -200,13 +206,12 @@ export default {
         }
       ],
       msg: 'front',
-      limit: 10,
-      i:1
+      limit: 5
     }
   },
 
-  mounted() {
-
+  updated() {
+    alert(this.limit);
   },
   computed:{
     filterItems:function(){
@@ -215,8 +220,7 @@ export default {
   },
   methods:{
     loadMore: function(){
-      this.limit =this.limit*this.i;
-      this.i++;
+      this.limit =this.limit+5;
     }
   }
 }
@@ -274,8 +278,10 @@ export default {
   letter-spacing: .02em;
   color: #333;
   min-width: 0;
+  text-align: left;
 }
 .likes,.comments{
-  float:left
+  float:left;
+  margin-left: 10px
 }
 </style>

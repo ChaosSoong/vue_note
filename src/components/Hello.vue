@@ -11,7 +11,7 @@
   <!-- 按钮触发模态框 -->
   <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">模态框</button>
   <!-- 模态框（Modal） -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div v-show="modalShow" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -35,16 +35,18 @@
       <tr>
         <th>x</th>
         <th>y</th>
+        <th>操作</th>
       </tr>
     </thead>
     <tbody>
-      <tr v-for="value in filterItems">
+      <tr v-for="(value,index) in filterItems">
         <td>{{value.x}}</td>
         <td>{{value.y}}</td>
+        <td><button class="btn btn-warning" @click="deleteItem(index)">删除</button></td>
       </tr>
     </tbody>
   </table>
-  <button class="btn btn-info" @click="loadMore">加载</button>
+  <button v-show="loadMoreShow" class="btn btn-info" @click="loadMore">加载</button>
 </div>
 </template>
 
@@ -56,7 +58,10 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App',
       items: [],
-      limit: 10
+      limit: 10,
+      curIndex: '',
+      modalShow: false,
+      loadMoreShow:true
     }
   },
   computed:{
@@ -75,8 +80,16 @@ export default {
       });
     },
     loadMore:function(){
-      alert(111);
+      // alert(111);
+      if (this.items.length===0) {
+        this.loadMoreShow = false;
+      }
+      this.loadMoreShow = false;
       this.limit = this.items.length;
+    },
+    deleteItem: function(index){
+      console.log(index);
+      this.items.splice(index,1);
     }
   },
   mounted() {
